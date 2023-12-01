@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_image"
+    android:layout_marginEnd="12dp"
+    android:clickable="true"
+    android:layout_width="300dp"
+    android:layout_height="150dp">
+
+    <ImageView
+        android:id="@+id/info_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/info"/>
+
+    <TextView
+        android:id="@+id/info_title"
+        android:layout_margin="16dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="How to use RiFeeder?"
+        android:maxLines="2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:ellipsize="end"/>
+
+</com.google.android.material.card.MaterialCardView>
