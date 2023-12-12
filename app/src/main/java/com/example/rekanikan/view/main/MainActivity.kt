@@ -24,6 +24,7 @@ import com.example.rekanikan.view.adapter.FeedingHistoryAdapter
 import com.example.rekanikan.view.adapter.InformationCardAdapter
 import com.example.rekanikan.view.feeder.FeederActivity
 import com.example.rekanikan.view.fishscan.FishScanActivity
+import com.example.rekanikan.view.shop.ShopActivity
 import com.example.rekanikan.view.welcome.WelcomeActivity
 
 class MainActivity : AppCompatActivity() {
@@ -40,26 +41,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        setupView()
+        setGreeting()
         setupAction()
 
         binding.feederCard.visibility = View.GONE
         binding.rvHistoryFeeding.visibility = View.GONE
         setHistoryFeedingData(FeedingHistoryData.data.subList(0, 3))
         setPromoAndInformationData(PromoAndInformationData.data)
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-
     }
 
     private fun setupAction() {
@@ -74,7 +62,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.shopMenu.setOnClickListener{
-            Toast.makeText(this, "shop coming soon", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity, ShopActivity::class.java)
+            startActivity(intent)
         }
 
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
@@ -86,6 +75,13 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
 
+        }
+    }
+
+    private fun setGreeting(){
+        viewModel.getSession().observe(this){ user ->
+            val greeting = getString(R.string.greeting, user.email)
+            binding.greeting1.text = greeting
         }
     }
 

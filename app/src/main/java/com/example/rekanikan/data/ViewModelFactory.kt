@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rekanikan.di.Injection
 import com.example.rekanikan.view.about.AboutViewModel
+import com.example.rekanikan.view.fishscan.FishScanViewModel
 import com.example.rekanikan.view.login.LoginViewModel
 import com.example.rekanikan.view.main.MainViewModel
 import com.example.rekanikan.view.register.RegisterViewModel
@@ -29,6 +30,9 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(RegisterViewModel::class.java) -> {
                 RegisterViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(FishScanViewModel::class.java) -> {
+                FishScanViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

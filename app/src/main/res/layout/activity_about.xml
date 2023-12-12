@@ -18,11 +18,12 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="410dp"
-        android:layout_height="23dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/transparent_black"
         android:gravity="center"
         android:text="@string/tap_to_edit"
+        android:padding="4dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,9 +48,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
-        android:src="@drawable/ic_launcher_background"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="3dp"
+        android:src="@drawable/blank_profile"
+        app:civ_border_color="@color/transparent_white"
+        app:civ_border_width="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_info_title" />
@@ -83,6 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
@@ -98,6 +101,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:clickable="true"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/light_gray"
                 app:cardCornerRadius="0dp">
 
                 <LinearLayout
@@ -156,6 +161,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:clickable="true"
+                app:strokeWidth="2dp"
+                app:strokeColor="@color/light_gray"
                 app:cardCornerRadius="0dp">
 
                 <LinearLayout
@@ -192,12 +199,12 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/logout"
-        android:textColor="@color/red_line"
+        android:textColor="@color/red"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/red_line"
-        app:strokeWidth="1dp" />
+        app:strokeWidth="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

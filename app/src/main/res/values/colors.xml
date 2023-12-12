@@ -4,8 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#2370DA</color>
     <color name="main_blue">#3494E7</color>
-    <color name="red_line">#CA5C5C</color>
+    <color name="red_line">#F19292</color>
+    <color name="red">#D96767</color>
     <color name="gray">#CCCCCC</color>
+    <color name="light_gray">#E6E6E6</color>
     <color name="dark_gray">#666666</color>
     <color name="blank">#F2F2F2</color>
     <color name="transparent_white">#1BFFFFFF</color>

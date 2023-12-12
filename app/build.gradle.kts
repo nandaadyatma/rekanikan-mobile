@@ -68,4 +68,10 @@ dependencies {
 
     //lottie animation
     implementation ("com.airbnb.android:lottie:3.4.0")
+
+    //cameraX
+    val cameraxVersion = "1.2.3"
+    implementation("androidx.camera:camera-camera2:$cameraxVersion")
+    implementation("androidx.camera:camera-lifecycle:$cameraxVersion")
+    implementation("androidx.camera:camera-view:$cameraxVersion")
 }

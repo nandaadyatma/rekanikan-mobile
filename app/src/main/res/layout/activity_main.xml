@@ -64,8 +64,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/hero"
-            android:layout_width="0dp"
-            android:layout_height="140dp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
@@ -77,18 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/hero" />
+                android:src="@drawable/hero2" />
 
-
-            <TextView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:padding="16dp"
-                android:text="@string/hero_caption"
-                android:textColor="@color/white"
-                android:textSize="24sp"
-                android:textStyle="bold" />
         </com.google.android.material.card.MaterialCardView>
 
         <LinearLayout
@@ -247,7 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/gradient1" />
+                android:src="@drawable/gradient4" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -270,7 +260,7 @@
                     android:layout_marginStart="4dp"
                     android:text="@string/feeder"
                     android:textColor="@color/white"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     app:layout_constraintStart_toEndOf="@id/feeder_icon"
                     app:layout_constraintTop_toTopOf="@id/feeder_icon" />
 
@@ -278,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:text="024FF"
+                    android:text="ID: 024FF"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     app:layout_constraintStart_toEndOf="@id/feeder_icon"

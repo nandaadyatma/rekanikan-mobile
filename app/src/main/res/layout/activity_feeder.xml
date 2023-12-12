@@ -25,11 +25,12 @@
         android:layout_height="160dp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="12dp"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_feeder"
-        app:strokeColor="@color/gray"
-        app:strokeWidth="1dp">
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,6 +56,127 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/feeder_card"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_feeder_card"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/gradient5"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/your_feeder_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/your_feeder"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:id="@+id/feeder_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Feeder Name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/your_feeder_title"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" />
+
+            <TextView
+                android:id="@+id/feeder_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="12dp"
+                android:text="ID: 02234F"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/temp_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="20sp"
+                android:text="oC"/>
+
+            <TextView
+                android:id="@+id/temp_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/temp_unit"
+                app:layout_constraintTop_toTopOf="@id/temp_unit"
+                android:layout_margin="16dp"
+                android:textSize="40sp"
+                android:text="24"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/thermometer"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintTop_toTopOf="@id/temp_value"
+                app:layout_constraintBottom_toBottomOf="@+id/temp_value"
+                app:layout_constraintEnd_toStartOf="@+id/temp_value" />
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="12dp"
+                android:text="Active"
+                android:enabled="false"
+                android:clickable="false"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                app:strokeColor="@color/white"
+                android:backgroundTint="@color/transparent_white"
+                app:strokeWidth="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/title_daily_feeding_schedule"
         android:layout_width="match_parent"
@@ -64,10 +186,10 @@
         android:text="@string/daily_feeding_schedule"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/add_feeder_card" />
+        app:layout_constraintTop_toBottomOf="@id/feeder_card" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/daily_schedule_card"
+        android:id="@+id/daily_schedule_card_blank"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
@@ -76,7 +198,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_daily_feeding_schedule"
-        app:strokeColor="@color/gray">
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,6 +216,55 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feeding_schedule_rv"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        tools:itemCount="1"
+        tools:listitem="@layout/feeding_schedule_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/daily_schedule_card_blank" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/add_new_plan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="16dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feeding_schedule_rv"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blank"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:src="@drawable/add" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:text="@string/add_new_plan"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
     <TextView
         android:id="@+id/title_feeding_records"
         android:layout_width="match_parent"
@@ -104,10 +276,10 @@
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daily_schedule_card" />
+        app:layout_constraintTop_toBottomOf="@+id/add_new_plan" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/daily_records_card"
+        android:id="@+id/daily_records_card_blank"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginHorizontal="16dp"
@@ -116,7 +288,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_feeding_records"
-        app:strokeColor="@color/gray">
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -132,5 +305,18 @@
                 android:textSize="16dp" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/feeding_records_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:overScrollMode="never"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_records_card_blank"
+        tools:itemCount="3"
+        tools:listitem="@layout/feeding_history_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
