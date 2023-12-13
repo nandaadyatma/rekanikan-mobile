@@ -15,6 +15,8 @@
     <string name="add_schedule">Add Feeding Schedule</string>
     <string name="set_time">Set time</string>
     <string name="add_feeding_schedule">Add Feeding Schedule</string>
+    <string name="detected_fish">Detected Fish:</string>
+    <string name="fish_treatment">Fish Treatment</string>
     <string name="add_feeder_sub_title">Please fill your feeder data</string>
     <string name="add_feeding_schedule_sub_title">Please fill your feeding schedule</string>
     <string name="no_feeder">No feeder added yet</string>
@@ -43,9 +45,6 @@
     <string name="have_no_account">Don\'t have an account? </string>
     <string name="have_no_feeder">Don\'t have a feeder? </string>
     <string name="have_account">Already have an account? </string>
-    <string name="message_welcome_page">Mau belajar Android, iOS, Machine Learning, Cloud, Front-End, Back-End, dan bidang IT lainnya? Di Dicoding aja!</string>
-    <string name="title_welcome_page">Selamat datang di Dicoding!</string>
-    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="message_login_page">please login to continue</string>
@@ -54,6 +53,5 @@
     <string name="time">Time</string>
     <string name="feeder_id">Feeder ID</string>
     <string name="feeding_amount">Feeder amount (gram)</string>
-    <string name="message_main_page">Selamat Belajar di Dicoding.</string>
     <string name="logout">Logout</string>
 </resources>

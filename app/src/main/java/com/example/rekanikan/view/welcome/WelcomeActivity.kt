@@ -31,6 +31,7 @@ class WelcomeActivity : AppCompatActivity() {
         viewModel.getSession().observe(this){ user ->
             if (user.isLogin){
                 startActivity(Intent(this@WelcomeActivity, MainActivity::class.java))
+                finish()
             }
 
         }

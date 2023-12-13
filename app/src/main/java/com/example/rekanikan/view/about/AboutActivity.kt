@@ -3,6 +3,7 @@ package com.example.rekanikan.view.about
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import androidx.activity.viewModels
 import com.example.rekanikan.data.ViewModelFactory
 import com.example.rekanikan.databinding.ActivityAboutBinding
@@ -35,6 +36,9 @@ class AboutActivity : AppCompatActivity() {
     fun setupAction(){
         binding.logout.setOnClickListener{
             viewModel.logout()
+        }
+        binding.languageMenu.setOnClickListener{
+            startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
         }
 
     }

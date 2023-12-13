@@ -127,6 +127,16 @@ class FishScanActivity : AppCompatActivity() {
                         is Result.Success -> {
                             showLoading(false)
                             Toast.makeText(this, "${result.data.namaIkan} : ${result.data.caraPerawatan}", Toast.LENGTH_SHORT).show()
+
+                            binding.detectedFishTitle.visibility = View.VISIBLE
+                            binding.detectedFishCard.visibility = View.VISIBLE
+                            binding.informationCard.visibility = View.VISIBLE
+
+                            binding.detectedFishTv.text = result.data.namaIkan
+                            binding.descriptionTv.text = "${result.data.caraPerawatan} Gold fish is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+
+                            binding.scanBtn.visibility = View.GONE
+                            binding.cameraBtn.visibility = View.GONE
                         }
 
                         is Result.Error -> {
