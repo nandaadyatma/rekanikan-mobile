@@ -8,25 +8,59 @@
     app:strokeWidth="2dp"
     app:strokeColor="@color/light_gray"
     android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/product_image"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/feeder_product"
-            android:scaleType="centerCrop"
-            android:adjustViewBounds="true"/>
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/product_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/feeder_product"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/product_image"
+                app:cardCornerRadius="2dp"
+                android:layout_margin="8dp"
+                app:strokeColor="@color/yellow"
+                android:backgroundTint="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/discountItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-30%"
+                    android:textColor="@color/red_promo"
+                    android:layout_margin="4dp"
+                    android:textSize="14sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         <TextView
             android:id="@+id/product_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
+            android:textSize="16sp"
+            android:fontFamily="@font/inter_semibold"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:text="RiFeeder A1"/>
@@ -36,7 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:text="Remote controlled feeder"/>
 
         <TextView
@@ -47,7 +81,7 @@
             android:textSize="20sp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/inter_semibold"
             android:textColor="@color/blue"
             android:text="Rp.300.000"/>
 

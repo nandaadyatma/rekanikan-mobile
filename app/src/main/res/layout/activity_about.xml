@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="279dp"
+        android:layout_height="250dp"
         android:scaleType="centerCrop"
         android:src="@drawable/profile_bg"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +23,7 @@
         android:background="@color/transparent_black"
         android:gravity="center"
         android:text="@string/tap_to_edit"
+        android:visibility="gone"
         android:padding="4dp"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
@@ -38,7 +39,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +64,7 @@
         android:text="Obi Wan Kenobi"
         android:textColor="@color/white"
         android:textSize="20sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/inter_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_image" />
@@ -75,6 +76,7 @@
         android:text="obiwankenobi@gmail.com"
         android:textColor="@color/white"
         android:textSize="16sp"
+        android:fontFamily="@font/inter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_name_tv" />
@@ -101,6 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:clickable="true"
+                android:visibility="gone"
                 app:strokeWidth="2dp"
                 app:strokeColor="@color/light_gray"
                 app:cardCornerRadius="0dp">
@@ -201,6 +204,7 @@
         android:text="@string/logout"
         android:textColor="@color/red"
         android:textSize="20sp"
+        android:fontFamily="@font/inter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

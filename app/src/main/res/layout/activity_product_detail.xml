@@ -41,7 +41,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/product_detail_img">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/product_price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -51,10 +51,12 @@
                         android:id="@+id/product_price1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/inter_bold"
                         android:text="Rp.300.000"
                         android:textColor="@color/blue"
-                        android:textSize="30sp" />
+                        android:textSize="30sp"
+                        android:fontFamily="@font/inter_semibold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/product_price2"
@@ -62,9 +64,32 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="8dp"
                         android:text="Rp.300.000"
+                        android:textColor="@color/dark_gray"
                         android:textSize="16sp"
-                        android:textColor="@color/dark_gray" />
-                </LinearLayout>
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/product_price1" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/yellow"
+                        app:cardCornerRadius="2dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="2dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/product_price2"
+                        app:strokeColor="@color/yellow">
+
+                        <TextView
+                            android:id="@+id/discountItem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="2dp"
+                            android:text="-30%"
+                            android:textColor="@color/red_promo"
+                            android:textSize="12sp" />
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 <TextView
@@ -72,7 +97,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="RIFeeder A1 Remote controlled feeder"
-                    android:textSize="24sp" />
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -115,20 +141,21 @@
                     android:textSize="14sp" />
 
                 <TextView
-                    android:id="@+id/spesification_title"
+                    android:id="@+id/detail_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"
                     android:fontFamily="@font/inter_medium"
-                    android:text="Description"
+                    android:text="Detail"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/spesification_content"
+                    android:id="@+id/detail_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:fontFamily="@font/inter_light"
+                    android:layout_marginBottom="100dp"
                     android:lineHeight="20sp"
                     android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electron"
                     android:textSize="14sp" />

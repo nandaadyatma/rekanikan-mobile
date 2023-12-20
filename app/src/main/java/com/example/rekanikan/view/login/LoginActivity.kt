@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -14,6 +15,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import com.example.rekanikan.R
 import com.example.rekanikan.data.ViewModelFactory
 import com.example.rekanikan.data.pref.UserModel
 import com.example.rekanikan.data.remote.request.LoginRequest
@@ -123,7 +125,9 @@ class LoginActivity : AppCompatActivity() {
 
                         is Result.Success -> {
                             showLoading(false)
-                            viewModel.saveSession(UserModel(email, result.data.loginResult.token))
+                            viewModel.saveSession(UserModel(name = result.data.loginResult.name, email = result.data.loginResult.email, token = result.data.loginResult.token))
+
+
                             
                             alertDialog()
                         }
@@ -151,7 +155,8 @@ class LoginActivity : AppCompatActivity() {
     private fun alertDialog(){
         AlertDialog.Builder(this).apply {
             setTitle("Yeah!")
-            setMessage("Anda berhasil login. Sudah tidak sabar untuk belajar ya?")
+            val message = getString(R.string.login_success)
+            setMessage(message)
             setPositiveButton("Lanjut") { _, _ ->
                 val intent = Intent(context, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK

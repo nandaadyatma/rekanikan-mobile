@@ -9,22 +9,21 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
-import com.example.rekanikan.R
-import com.example.rekanikan.Utils.getImageUri
-import com.example.rekanikan.Utils.reduceFileImage
-import com.example.rekanikan.Utils.uriToFile
+import com.example.rekanikan.utils.Utils.getImageUri
+import com.example.rekanikan.utils.Utils.reduceFileImage
+import com.example.rekanikan.utils.Utils.uriToFile
 import com.example.rekanikan.data.ViewModelFactory
+import com.example.rekanikan.data.dummy.ScanResultData
+import com.example.rekanikan.data.model.FishResultItem
 import com.example.rekanikan.data.result.Result
 import com.example.rekanikan.databinding.ActivityFishScanBinding
 import com.example.rekanikan.view.camera.CameraActivity
 import com.example.rekanikan.view.camera.CameraActivity.Companion.CAMERAX_RESULT
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
 
 
 class FishScanActivity : AppCompatActivity() {
@@ -64,6 +63,11 @@ class FishScanActivity : AppCompatActivity() {
         binding.cameraBtn.setOnClickListener {
             startCamera()
         }
+
+        binding.galleryBtn.setOnClickListener {
+            launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
+        }
+
         binding.scanBtn.isEnabled = false
     }
 
@@ -112,6 +116,20 @@ class FishScanActivity : AppCompatActivity() {
         }
     }
 
+    private val launcherGallery = registerForActivityResult(
+        ActivityResultContracts.PickVisualMedia()
+    ) { uri: Uri? ->
+        if (uri != null) {
+            currentImageUri = uri
+            showImage()
+            binding.scanBtn.setOnClickListener {
+                scanImage()
+            }
+        } else {
+            Log.d("Photo Picker", "No media selected")
+        }
+    }
+
     private fun scanImage(){
         currentImageUri?.let { uri ->
             val imageFile = uriToFile(uri, this).reduceFileImage()
@@ -126,22 +144,51 @@ class FishScanActivity : AppCompatActivity() {
 
                         is Result.Success -> {
                             showLoading(false)
-                            Toast.makeText(this, "${result.data.namaIkan} : ${result.data.caraPerawatan}", Toast.LENGTH_SHORT).show()
+                            var fishData: FishResultItem? = null
+//                            Toast.makeText(this, "${result.data.namaIkan} : ${result.data.caraPerawatan}", Toast.LENGTH_SHORT).show()
+
+                            if (result.data != null){
+                                when (result.data.namaIkan) {
+                                    "Ikan Glowfish" -> {
+                                        fishData = ScanResultData.data[1]
+                                    }
+                                    "Ikan Komet" -> {
+                                        fishData = ScanResultData.data[3]
+                                    }
+                                    "Ikan Koki" -> {
+                                        fishData = ScanResultData.data[0]
+                                    }
+                                    "Ikan Manfish" -> {
+                                        fishData = ScanResultData.data[2]
+                                    }
+                                }
+                            }
 
                             binding.detectedFishTitle.visibility = View.VISIBLE
                             binding.detectedFishCard.visibility = View.VISIBLE
                             binding.informationCard.visibility = View.VISIBLE
 
-                            binding.detectedFishTv.text = result.data.namaIkan
-                            binding.descriptionTv.text = "${result.data.caraPerawatan} Gold fish is Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+//                            Toast.makeText(this, "${fishData?.fishName}", Toast.LENGTH_SHORT).show()
+
+                            if (fishData != null) {
+                                binding.detectedFishTv.text = fishData.fishName
+                                binding.speciesTv.text = "(${fishData.speciesName})"
+                                binding.descriptionTv.text = fishData.description
+                                binding.fishCharacteristicTv.text = fishData.charasteristic
+                                binding.fishTreatmentTv.text = fishData.treatment
+                                binding.fishCombinationTv.text = fishData.fishFriends
+                            }
+
 
                             binding.scanBtn.visibility = View.GONE
                             binding.cameraBtn.visibility = View.GONE
+                            binding.galleryBtn.visibility = View.GONE
                         }
 
                         is Result.Error -> {
                             showLoading(false)
                             Toast.makeText(this, "${result.error}", Toast.LENGTH_SHORT).show()
+                            scanImage()
                         }
                     }
                 }

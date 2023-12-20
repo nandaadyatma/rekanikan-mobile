@@ -14,6 +14,10 @@ class MainViewModel(private val repository: UserRepository): ViewModel() {
         return repository.getSession().asLiveData()
     }
 
+    fun getFeeder() = repository.getFeeder()
+
+    fun getArticles() = repository.getArticles()
+
     fun logout(){
         viewModelScope.launch {
             repository.logout()

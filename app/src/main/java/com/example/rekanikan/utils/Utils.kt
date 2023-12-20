@@ -1,4 +1,4 @@
-package com.example.rekanikan
+package com.example.rekanikan.utils
 
 import android.content.ContentValues
 import android.content.Context
@@ -11,10 +11,12 @@ import android.os.Environment
 import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import com.example.rekanikan.BuildConfig
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
+import java.text.NumberFormat
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -124,5 +126,9 @@ internal object Utils {
             e.printStackTrace()
             "Error parsing date"
         }
+    }
+
+    fun String.withNumberingFormat(): String {
+        return NumberFormat.getNumberInstance().format(this.toDouble())
     }
 }

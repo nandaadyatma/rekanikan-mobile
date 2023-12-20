@@ -5,6 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.rekanikan.di.Injection
 import com.example.rekanikan.view.about.AboutViewModel
+import com.example.rekanikan.view.add_feeding_schedule.AddFeedingScheduleViewModel
+import com.example.rekanikan.view.addfeeder.AddFeederViewModel
+import com.example.rekanikan.view.edit_feeding_schedule.EditFeedingScheduleViewModel
+import com.example.rekanikan.view.feeder.FeederViewModel
 import com.example.rekanikan.view.fishscan.FishScanViewModel
 import com.example.rekanikan.view.login.LoginViewModel
 import com.example.rekanikan.view.main.MainViewModel
@@ -33,6 +37,18 @@ class ViewModelFactory(private val repository: UserRepository) : ViewModelProvid
             }
             modelClass.isAssignableFrom(FishScanViewModel::class.java) -> {
                 FishScanViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(FeederViewModel::class.java) -> {
+                FeederViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(AddFeedingScheduleViewModel::class.java) -> {
+                AddFeedingScheduleViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(EditFeedingScheduleViewModel::class.java) -> {
+                EditFeedingScheduleViewModel(repository) as T
+            }
+            modelClass.isAssignableFrom(AddFeederViewModel::class.java) -> {
+                AddFeederViewModel(repository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

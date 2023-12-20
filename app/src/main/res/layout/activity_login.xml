@@ -28,8 +28,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:text="@string/login"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:textSize="24sp"
+        android:fontFamily="@font/inter_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:text="@string/message_login_page"
-        android:textSize="18sp"
+        android:fontFamily="@font/inter"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,6 +127,7 @@
         android:layout_marginEnd="32dp"
         android:text="@string/login"
         android:textSize="20sp"
+        android:fontFamily="@font/inter_semibold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordEditTextLayout" />
@@ -179,7 +181,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="vertical"
         android:visibility="gone"
-        tools:visibility="visible"
+        tools:visibility="gone"
         android:gravity="center"
         >
 
@@ -187,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="10dp">
+            app:cardCornerRadius="5dp">
             <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="150dp"
                 android:layout_height="150dp"

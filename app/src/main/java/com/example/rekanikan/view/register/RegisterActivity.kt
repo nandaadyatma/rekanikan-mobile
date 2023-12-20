@@ -175,8 +175,10 @@ class RegisterActivity : AppCompatActivity() {
     private fun alertDialog(email: String) {
         AlertDialog.Builder(this).apply {
             setTitle("Yeah!")
-            setMessage("Akun dengan $email sudah jadi nih. Yuk, login dan belajar coding.")
-            setPositiveButton("Lanjut") { _, _ ->
+            val message = getString(R.string.register_success, email)
+            val ok = getString(R.string.next)
+            setMessage(message)
+            setPositiveButton(ok) { _, _ ->
                 finish()
             }
             create()

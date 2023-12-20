@@ -32,6 +32,8 @@ class ShopActivity : AppCompatActivity() {
         binding.rvProducts.adapter = adapter
 
         adapter.submitList(ShopProductData.data)
+
+        binding.viewFlipperPromo.startFlipping()
     }
 
 

@@ -2,10 +2,8 @@ package com.example.rekanikan.data.model
 
 data class FeedingScheduleItem(
     val id: Int,
-    val hour: String,
-    val minute: String,
-    val startTime: String,
-    val feederId: Int,
+    val hour: Int,
+    val minute: Int,
     val portion: Int,
     val isActive: Boolean,
 )
