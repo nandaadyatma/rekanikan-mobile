@@ -80,7 +80,7 @@ public object ScanResultData {
             speciesName = "Carassius auratus",
             habitate = "Freshwater",
             food = "Pellets, mosquito larvae, silk worms",
-            charasteristic = "- Active and friendly\n\n" +
+            charasteristic = "- Active and friendly\n" +
                     "- Can coexist with other fish\n" +
                     "- Long and slender body shape",
             treatment = "- Water temperature: 22-27 degrees Celsius\n" +
