@@ -82,7 +82,7 @@ class AddFeederActivity : AppCompatActivity() {
     private fun alertDialog(){
         AlertDialog.Builder(this).apply {
             setTitle("Yeah!")
-            val message = context.getString(R.string.success_add_schedule)
+            val message = context.getString(R.string.success_add_feeder)
             val okay = context.getString(R.string.okay)
             setMessage(message)
             setPositiveButton(okay) { _, _ ->
