@@ -14,7 +14,7 @@ RekanIkan used 2 main API
 - User and Feeder Data (https://rekanikan-dev2-kyrz52in2q-et.a.run.app/)
 - Machine Learning - Fish Classification (https://predict-36dyfpcquq-et.a.run.app)
 
-#Features 
+# Features 
 ### 1. Sign Up 
 Allow user to create their account first, before use the app features
 ### 2. Login
